@@ -13,5 +13,6 @@ public interface PaymentRepository extends JpaRepository<Payment, Integer> {
 	@Query("SELECT p FROM Payment p WHERE p.booking.id = :bookingId")
     List<Payment> findByBookingId(@Param("bookingId") Integer bookingId);
 
-    Payment findByTransactionId(String transactionId);
+    @Query("SELECT p FROM Payment p WHERE p.transactionId = :transactionId")
+    List<Payment> findByTransactionId(@Param("transactionId") String transactionId);
 }

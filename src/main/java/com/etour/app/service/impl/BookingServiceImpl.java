@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.etour.app.dto.BookingRequestDTO;
+import com.etour.app.dto.BookingResponseDTO;
 import com.etour.app.dto.PassengerDTO;
 import com.etour.app.entity.*;
 import com.etour.app.repository.*;
@@ -104,6 +105,7 @@ public class BookingServiceImpl implements BookingService {
         booking.setTourAmount(tourAmount);
         booking.setTaxAmount(taxAmount);
         booking.setTotalAmount(totalAmount);
+        booking.setBookingStatus("PENDING");
 
         BookingHeader savedBooking =
                 bookingRepo.save(booking);
@@ -207,9 +209,11 @@ public class BookingServiceImpl implements BookingService {
     // =================================================
 
     @Override
-    public List<BookingHeader> getBookingsByCustomer(Integer customerId) {
-
-        return bookingRepo.getBookingsByCustomerId(customerId);
+    public List<BookingResponseDTO> getBookingsByCustomer(Integer customerId) {
+        return bookingRepo.getBookingsByCustomerId(customerId)
+                .stream()
+                .map(this::toDTO)
+                .toList();
     }
 
     // =================================================
@@ -217,9 +221,10 @@ public class BookingServiceImpl implements BookingService {
     // =================================================
 
     @Override
-    public BookingHeader getBookingById(Integer bookingId) {
-
-        return bookingRepo.findById(bookingId).get();
+    public BookingResponseDTO getBookingById(Integer bookingId) {
+        BookingHeader booking = bookingRepo.findById(bookingId)
+                .orElseThrow(() -> new RuntimeException("Booking not found with ID: " + bookingId));
+        return toDTO(booking);
     }
 
     // =================================================
@@ -227,9 +232,11 @@ public class BookingServiceImpl implements BookingService {
     // =================================================
 
     @Override
-    public List<BookingHeader> getAllBookings() {
-
-        return bookingRepo.findAll();
+    public List<BookingResponseDTO> getAllBookings() {
+        return bookingRepo.findAll()
+                .stream()
+                .map(this::toDTO)
+                .toList();
     }
 
     // =================================================
@@ -240,5 +247,45 @@ public class BookingServiceImpl implements BookingService {
     public void cancelBooking(Integer bookingId) {
 
         bookingRepo.deleteById(bookingId);
+    }
+
+    private BookingResponseDTO toDTO(BookingHeader booking) {
+        BookingResponseDTO dto = new BookingResponseDTO();
+        
+        // Basic booking info
+        dto.setId(booking.getId());
+        dto.setBookingDate(booking.getBookingDate());
+        dto.setBookingStatus(booking.getBookingStatus());
+        dto.setTotalPassengers(booking.getTotalPassengers());
+        dto.setTourAmount(booking.getTourAmount());
+        dto.setTaxAmount(booking.getTaxAmount());
+        dto.setTotalAmount(booking.getTotalAmount());
+        
+        // Customer info
+        if (booking.getCustomer() != null) {
+            dto.setCustomerId(booking.getCustomer().getId());
+            dto.setCustomerName(booking.getCustomer().getName());
+            dto.setCustomerEmail(booking.getCustomer().getEmail());
+            dto.setCustomerMobile(booking.getCustomer().getMobileNumber());
+        }
+        
+        // Tour info
+        if (booking.getTour() != null) {
+            dto.setTourId(booking.getTour().getId());
+            dto.setTourDescription(booking.getTour().getDescription());
+            if (booking.getTour().getCatmaster() != null) {
+                dto.setTourCategoryName(booking.getTour().getCatmaster().getName());
+            }
+        }
+        
+        // Departure date info
+        if (booking.getDepartureDate() != null) {
+            dto.setDepartureDateId(booking.getDepartureDate().getId());
+            dto.setDepartureDate(booking.getDepartureDate().getDepartureDate());
+            dto.setEndDate(booking.getDepartureDate().getEndDate());
+            dto.setNumberOfDays(booking.getDepartureDate().getNumberOfDays());
+        }
+        
+        return dto;
     }
 }

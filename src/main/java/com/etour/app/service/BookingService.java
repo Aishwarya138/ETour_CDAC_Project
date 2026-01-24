@@ -3,17 +3,18 @@ package com.etour.app.service;
 import java.util.List;
 
 import com.etour.app.dto.BookingRequestDTO;
+import com.etour.app.dto.BookingResponseDTO;
 import com.etour.app.entity.BookingHeader;
 
 public interface BookingService {
 
-    BookingHeader createBooking(BookingRequestDTO dto);
+    BookingHeader createBooking(BookingRequestDTO dto);  // Keep as BookingHeader for create
 
-    List<BookingHeader> getBookingsByCustomer(Integer customerId);
+    List<BookingResponseDTO> getBookingsByCustomer(Integer customerId);
 
-    BookingHeader getBookingById(Integer bookingId);
+    BookingResponseDTO getBookingById(Integer bookingId);
 
-    List<BookingHeader> getAllBookings();
+    List<BookingResponseDTO> getAllBookings();
 
     void cancelBooking(Integer bookingId);
 }

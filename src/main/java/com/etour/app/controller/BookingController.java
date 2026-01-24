@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.etour.app.dto.BookingRequestDTO;
+import com.etour.app.dto.BookingResponseDTO;
 import com.etour.app.entity.BookingHeader;
 import com.etour.app.service.BookingService;
 
@@ -30,7 +31,7 @@ public class BookingController {
 	// ==========================
 
 	@GetMapping("/customer/{customerId}")
-	public List<BookingHeader> getCustomerBookings(@PathVariable Integer customerId) {
+	public List<BookingResponseDTO> getCustomerBookings(@PathVariable Integer customerId) {
 		return bookingService.getBookingsByCustomer(customerId);
 	}
 
@@ -39,7 +40,7 @@ public class BookingController {
 	// ==========================
 
 	@GetMapping("/{bookingId}")
-	public BookingHeader getBooking(@PathVariable Integer bookingId) {
+	public BookingResponseDTO getBooking(@PathVariable Integer bookingId) {
 		return bookingService.getBookingById(bookingId);
 	}
 
@@ -48,7 +49,7 @@ public class BookingController {
 	// ==========================
 
 	@GetMapping("/all")
-	public List<BookingHeader> getAllBookings() {
+	public List<BookingResponseDTO> getAllBookings() {
 		return bookingService.getAllBookings();
 	}
 
