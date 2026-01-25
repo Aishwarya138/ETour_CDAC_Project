@@ -1,9 +1,9 @@
 package com.etour.app.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.etour.app.entity.ItineraryMaster;
+import com.etour.app.dto.ItineraryResponseDTO;
 
 public interface ItineraryService {
 
@@ -11,8 +11,7 @@ public interface ItineraryService {
 
     List<ItineraryMaster> getAllItineraries();
 
-   
+    ItineraryMaster getItineraryById(Integer id);
 
-    ItineraryMaster getItineraryById(Integer id);	
-    
+    List<ItineraryResponseDTO> getItinerariesByCatmasterId(Integer catmasterId);
 }

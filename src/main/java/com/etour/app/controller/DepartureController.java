@@ -8,10 +8,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import com.etour.app.entity.DepartureDateMaster;
-import com.etour.app.service.DepartureService;
+import com.etour.app.service.DepartureService;          
+import com.etour.app.dto.DepartureDateDTO;
+import org.springframework.http.ResponseEntity;
+
 
 @RestController
-@RequestMapping("/departure")
+@RequestMapping("/api/departures")
 public class DepartureController {
 
     @Autowired
@@ -19,8 +22,8 @@ public class DepartureController {
 
     // ✅ 1) Add Departure Date
     @PostMapping("/add")
-    public DepartureDateMaster addDeparture(@RequestBody DepartureDateMaster departure) {
-        return service.addDeparture(departure);
+    public DepartureDateMaster addDepartureDate(@RequestBody DepartureDateMaster departure) {
+        return service.addDepartureDate(departure);
     }
 
     // ✅ 2) Update Departure Date
@@ -30,7 +33,7 @@ public class DepartureController {
     }
 
     // ✅ 3) Get All Departure Dates
-    @GetMapping("/all")
+    @GetMapping
     public List<DepartureDateMaster> getAllDepartures() {
         return service.getAllDepartures();
     }
@@ -43,15 +46,15 @@ public class DepartureController {
 
     // ✅ 5) Delete Departure By ID
     @DeleteMapping("/delete/{id}")
-    public String deleteDeparture(@PathVariable int id) {
-        service.deleteDeparture(id);
-        return "Departure deleted successfully!";
+    public ResponseEntity<String> deleteDepartureDate(@PathVariable Integer id) {
+        service.deleteDepartureDate(id);
+        return ResponseEntity.ok("Departure date deleted successfully!");
     }
 
     // ✅ 6) Get Departures By Category (catmaster_id)
     @GetMapping("/category/{catmasterId}")
-    public List<DepartureDateMaster> getDeparturesByCategory(@PathVariable int catmasterId) {
-        return service.getDeparturesByCategory(catmasterId);
+    public ResponseEntity<List<DepartureDateDTO>> getDepartureDatesByCatmasterId(@PathVariable Integer catmasterId) {
+        return ResponseEntity.ok(service.getDepartureDatesByCatmasterId(catmasterId));
     }
 
     // ✅ 7) Get Upcoming Departures (today onwards)

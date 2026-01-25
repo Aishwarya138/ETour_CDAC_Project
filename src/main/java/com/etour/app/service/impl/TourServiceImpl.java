@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.etour.app.dto.CostDTO;
 import com.etour.app.dto.DepartureDateDTO;
-import com.etour.app.dto.ItineraryDTO;
+import com.etour.app.dto.ItineraryResponseDTO;
 import com.etour.app.dto.TourDTO;
 import com.etour.app.entity.CategoryMaster;
 import com.etour.app.entity.CostMaster;
@@ -16,11 +16,12 @@ import com.etour.app.entity.DepartureDateMaster;
 import com.etour.app.entity.ItineraryMaster;
 import com.etour.app.entity.TourMaster;
 import com.etour.app.repository.CategoryRepository;
-import com.etour.app.repository.CostRepository;
-import com.etour.app.repository.DepartureDateRepository;
-import com.etour.app.repository.ItinerarryRepository;
 import com.etour.app.repository.TourRepository;
+import com.etour.app.service.CostService;
+import com.etour.app.service.ItineraryService;
 import com.etour.app.service.TourService;
+import com.etour.app.service.DepartureService;
+
 
 @Service
 public class TourServiceImpl implements TourService
@@ -32,13 +33,13 @@ public class TourServiceImpl implements TourService
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
-    private CostRepository costRepository;
+	private CostService costService;
 
     @Autowired
-    private ItinerarryRepository itineraryRepository;
+    private ItineraryService itineraryService;
 
     @Autowired
-    private DepartureDateRepository departureDateRepository;
+    private DepartureService departureService;
 
 
 	@Override
@@ -51,8 +52,8 @@ public class TourServiceImpl implements TourService
 	@Override
 	public TourMaster getTourById(int id) 
 	{
-		
-		return tourRepository.findById(id).orElse(null);
+		return tourRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Tour not found"));
 	}
 
 	@Override
@@ -73,63 +74,44 @@ public class TourServiceImpl implements TourService
 	
 	
 	@Override
-    public TourDTO getTourDetailsByCategoryId(int catmasterId) {
+    public TourDTO getTourDetailsByCatmasterId(int catmasterId) {
+		CategoryMaster category = categoryRepository.findById(catmasterId)
+            .orElseThrow(() -> new RuntimeException("Category not found"));
+
         TourDTO dto = new TourDTO();
         dto.setCatmasterId(catmasterId);
-
-        // tour name
-        categoryRepository.findById(catmasterId).map(CategoryMaster::getName).ifPresent(dto::setTourName);
+		dto.setTourName(category.getName());			
 
         // description (if present in tour_master)
-        tourRepository.findFirstByCatmaster_Id(catmasterId).map(TourMaster::getDescription).ifPresent(dto::setDescription);
+        tourRepository.findFirstByCatmaster_Id(catmasterId)
+			.map(TourMaster::getDescription)
+			.ifPresent(dto::setDescription);
 
         
-        List<CostMaster> costs = costRepository.findByCatmaster_Id(catmasterId);
-        
-        // overview base cost (take first cost row if exists)
-        dto.setBaseCost(costs.isEmpty() ? BigDecimal.ZERO : costs.get(0).getBaseCost());
+        dto.setCosts(
+    		costService.getCostsByCatmasterId(catmasterId)
+		);
 
-        // full costs list (for cost tab)
-        List<CostDTO> costDtos = new ArrayList<>();
-        for (CostMaster c : costs) {
-        	CostDTO cDto = new CostDTO();
-        	cDto.setBaseCost(c.getBaseCost());
-        	cDto.setSinglePersonCost(c.getSinglePersonCost());
-        	cDto.setExtraPersonCost(c.getExtraPersonCost());
-        	cDto.setChildWithBedCost(c.getChildWithBedCost());
-        	cDto.setChildWithoutBedCost(c.getChildWithoutBedCost());
-        	cDto.setValidFromDate(c.getValidFromDate());
-        	cDto.setValidToDate(c.getValidToDate());
-        	costDtos.add(cDto);
-        }
-        dto.setCosts(costDtos);
+		// base cost
+		List<CostDTO> costs = dto.getCosts();
+		dto.setBaseCost(
+			costs.isEmpty() ? BigDecimal.ZERO : costs.get(0).getBaseCost()
+		);
 
-        List<DepartureDateMaster> dates = departureDateRepository.findByCatmaster_Id(catmasterId);
-        List<DepartureDateDTO> dateDtos = new ArrayList<>();
-        for (DepartureDateMaster d : dates) {
-        	DepartureDateDTO dDto = new DepartureDateDTO();
-        	dDto.setId(d.getId());
-        	dDto.setDepartureDate(d.getDepartureDate());
-        	dDto.setEndDate(d.getEndDate());
-        	dDto.setNumberOfDays(d.getNumberOfDays());
-        	dateDtos.add(dDto);
-        }
-        dto.setAvailableDates(dateDtos);
 
-        // overview number of days (from first available date if present)
-        if (!dateDtos.isEmpty()) {
-        	dto.setNumberOfDays(dateDtos.get(0).getNumberOfDays());
-        }
+        List<DepartureDateDTO> dates =
+		departureService.getDepartureDatesByCatmasterId(catmasterId);
 
-        List<ItineraryMaster> itinerary = itineraryRepository.findByCatmaster_IdOrderByDayNumberAsc(catmasterId);
-        List<ItineraryDTO> itinDtos = new ArrayList<>();
-        for (ItineraryMaster i : itinerary) {
-        	ItineraryDTO iDto = new ItineraryDTO();
-        	iDto.setDayNumber(i.getDayNumber());
-        	iDto.setItineraryDetails(i.getItineraryDetails());
-        	itinDtos.add(iDto);
-        }
-        dto.setItinerary(itinDtos);
+		dto.setAvailableDates(dates);
+
+		if (!dates.isEmpty()) {
+			dto.setNumberOfDays(dates.get(0).getNumberOfDays());
+		}
+
+        List<ItineraryResponseDTO> itinerary =
+                itineraryService.getItinerariesByCatmasterId(catmasterId);
+
+        dto.setItinerary(itinerary);
 
         return dto;
     }

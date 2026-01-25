@@ -4,17 +4,15 @@ import com.etour.app.entity.PassengerMaster;
 import com.etour.app.repository.PassengerRepository;
 import com.etour.app.service.PassengerService;
 import org.springframework.stereotype.Service;
-
+import com.etour.app.dto.PassengerResponseDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @Service
 public class PassengerServiceImpl implements PassengerService {
 
-    private final PassengerRepository passengerRepository;
-
-    public PassengerServiceImpl(PassengerRepository passengerRepository) {
-        this.passengerRepository = passengerRepository;
-    }
+    @Autowired
+    private PassengerRepository passengerRepository;
 
     @Override
     public PassengerMaster addPassenger(PassengerMaster passenger) {
@@ -27,13 +25,32 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
-    public List<PassengerMaster> getAllPassengers() {
-        return passengerRepository.findAll();
+    public List<PassengerResponseDTO> getAllPassengers() {
+        return passengerRepository.findAll()
+            .stream()
+            .map(passenger -> {
+                PassengerResponseDTO dto = new PassengerResponseDTO();
+                dto.setPassengerId(passenger.getId());
+                dto.setPassengerName(passenger.getPassengerName());
+                dto.setPassengerType(passenger.getPassengerType());
+                dto.setPassengerAmount(passenger.getPassengerAmount());
+                return dto;
+            })
+            .toList();
     }
 
     @Override
-    public List<PassengerMaster> getPassengersByBookingId(int bookingId) {
-    	return passengerRepository.findPassengersByBookingId(bookingId);
+    public List<PassengerResponseDTO> getPassengersByBookingId(int bookingId) {
+    	List<PassengerMaster> passengers = passengerRepository.findPassengersByBookingId(bookingId);
+
+    	return passengers.stream().map(passenger -> {
+    		PassengerResponseDTO dto = new PassengerResponseDTO();
+            dto.setPassengerId(passenger.getId());
+    		dto.setPassengerName(passenger.getPassengerName());
+    		dto.setPassengerType(passenger.getPassengerType());
+    		dto.setPassengerAmount(passenger.getPassengerAmount());
+    		return dto;
+    	}).toList();
     }
 
    

@@ -4,10 +4,19 @@ import java.math.BigDecimal;
 
 public class PassengerResponseDTO {
 
+    private Integer passengerId;        
     private String passengerName;
     private String passengerType;
     private BigDecimal passengerAmount;
 
+    public Integer getPassengerId() {
+        return passengerId;
+    }
+
+    public void setPassengerId(Integer passengerId) {
+        this.passengerId = passengerId;
+    }
+    
     public String getPassengerName() {
         return passengerName;
     }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import com.etour.app.dto.CostDTO;
 
 
 @RestController
@@ -38,11 +39,16 @@ public class CostController {
     // 3. Delete Cost
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCost(@PathVariable int id) {
-        // Optional: Check if exists before deleting
-        if (costService.getCostById(id).isPresent()) {
-            costService.deleteCost(id);
-            return ResponseEntity.ok("Cost deleted successfully");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cost ID not found");
-        }
-    }}
+        costService.deleteCost(id);
+        return ResponseEntity.ok("Cost deleted successfully");
+    }
+
+    @GetMapping("/category/{catmasterId}")
+    public ResponseEntity<List<CostDTO>> getCostsByCategory(
+            @PathVariable Integer catmasterId) {
+
+        return ResponseEntity.ok(
+            costService.getCostsByCatmasterId(catmasterId)
+        );
+    }
+}

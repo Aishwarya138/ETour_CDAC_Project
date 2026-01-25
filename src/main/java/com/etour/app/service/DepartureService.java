@@ -4,10 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.etour.app.entity.DepartureDateMaster;
+import com.etour.app.dto.DepartureDateDTO;
 
 public interface DepartureService {
 
-    DepartureDateMaster addDeparture(DepartureDateMaster departure);
+    DepartureDateMaster addDepartureDate(DepartureDateMaster departure);
 
     DepartureDateMaster updateDeparture(DepartureDateMaster departure);
 
@@ -15,9 +16,9 @@ public interface DepartureService {
 
     DepartureDateMaster getDepartureById(int departureDateId);
 
-    void deleteDeparture(int departureDateId);
+    void deleteDepartureDate(Integer departureDateId);
 
-    List<DepartureDateMaster> getDeparturesByCategory(int catmasterId);
+    List<DepartureDateDTO> getDepartureDatesByCatmasterId(Integer catmasterId);
 
     List<DepartureDateMaster> getUpcomingDepartures();
 

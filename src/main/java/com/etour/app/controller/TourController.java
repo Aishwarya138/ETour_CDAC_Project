@@ -51,17 +51,12 @@ public class TourController
 	
 	
 	@GetMapping("/details/{catmasterId}")
-    public ResponseEntity<TourDTO> getTourFullDetails(@PathVariable int catmasterId)
-	{
-        
-        TourDTO tourDetails = tourService.getTourDetailsByCategoryId(catmasterId);
-        
-        if (tourDetails != null) {
-            return ResponseEntity.ok(tourDetails);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-	}
+    public ResponseEntity<TourDTO> getTourDetails(
+            @PathVariable int catmasterId) {
 
-	
+        return ResponseEntity.ok(
+            tourService.getTourDetailsByCatmasterId(catmasterId)
+        );
+    }
+
 }

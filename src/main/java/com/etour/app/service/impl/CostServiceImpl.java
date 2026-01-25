@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import com.etour.app.dto.CostDTO;
 
 @Service
 public class CostServiceImpl implements CostService {
@@ -34,5 +35,24 @@ public class CostServiceImpl implements CostService {
 		costRepository.deleteById(id);
 
 	}
+
+	@Override
+    public List<CostDTO> getCostsByCatmasterId(Integer catmasterId) {
+
+        List<CostMaster> costs =
+                costRepository.findByCatmaster_Id(catmasterId);
+
+        return costs.stream().map(c -> {
+            CostDTO dto = new CostDTO();
+            dto.setBaseCost(c.getBaseCost());
+            dto.setSinglePersonCost(c.getSinglePersonCost());
+            dto.setExtraPersonCost(c.getExtraPersonCost());
+            dto.setChildWithBedCost(c.getChildWithBedCost());
+            dto.setChildWithoutBedCost(c.getChildWithoutBedCost());
+            dto.setValidFromDate(c.getValidFromDate());
+            dto.setValidToDate(c.getValidToDate());
+            return dto;
+        }).toList();
+    }
 
 }

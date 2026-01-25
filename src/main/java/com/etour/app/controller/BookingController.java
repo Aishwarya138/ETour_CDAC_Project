@@ -48,7 +48,7 @@ public class BookingController {
 	// ✅ GET ALL BOOKINGS (ADMIN)
 	// ==========================
 
-	@GetMapping("/all")
+	@GetMapping
 	public List<BookingResponseDTO> getAllBookings() {
 		return bookingService.getAllBookings();
 	}

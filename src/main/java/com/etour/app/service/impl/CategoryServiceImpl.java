@@ -44,7 +44,7 @@ public class CategoryServiceImpl implements CategoryService {
 		
 		resp.setResponseType("TOUR");
 		resp.setSubcategories(null);
-		resp.setTour(tourService.getTourDetailsByCategoryId(category.getId()));
+		resp.setTour(tourService.getTourDetailsByCatmasterId(category.getId()));
 		return resp;
 
 	}

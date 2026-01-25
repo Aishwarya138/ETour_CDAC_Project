@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.etour.app.entity.DepartureDateMaster;
 import com.etour.app.repository.DepartureDateRepository;
 import com.etour.app.service.DepartureService;
+import com.etour.app.dto.DepartureDateDTO;
 
 @Service
 public class DepartureDateImpl implements DepartureService {
@@ -17,7 +18,7 @@ public class DepartureDateImpl implements DepartureService {
     private DepartureDateRepository repo;
 
     @Override
-    public DepartureDateMaster addDeparture(DepartureDateMaster departure) {
+    public DepartureDateMaster addDepartureDate(DepartureDateMaster departure) {
         return repo.save(departure);
     }
 
@@ -37,13 +38,22 @@ public class DepartureDateImpl implements DepartureService {
     }
 
     @Override
-    public void deleteDeparture(int departureDateId) {
+    public void deleteDepartureDate(Integer departureDateId) {
         repo.deleteById(departureDateId);
     }
 
     @Override
-    public List<DepartureDateMaster> getDeparturesByCategory(int catmasterId) {
-        return repo.findByCatmaster_Id(catmasterId);
+    public List<DepartureDateDTO> getDepartureDatesByCatmasterId(Integer catmasterId) {
+        List<DepartureDateMaster> dates = repo.findByCatmaster_Id(catmasterId);
+
+        return dates.stream().map(date -> {
+            DepartureDateDTO dto = new DepartureDateDTO();
+            dto.setId(date.getId());
+            dto.setDepartureDate(date.getDepartureDate());
+            dto.setEndDate(date.getEndDate());
+            dto.setNumberOfDays(date.getNumberOfDays());
+            return dto;
+        }).toList();
     }
 
     @Override

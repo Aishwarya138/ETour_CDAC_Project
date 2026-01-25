@@ -16,7 +16,7 @@ public class TourDTO
 	// full pricing + schedule + itinerary
 	private List<CostDTO> costs;
 	private List<DepartureDateDTO> availableDates;
-	private List<ItineraryDTO> itinerary;
+	private List<ItineraryResponseDTO> itinerary;
 
 	public Integer getCatmasterId() {
 		return catmasterId;
@@ -74,11 +74,11 @@ public class TourDTO
 		this.availableDates = availableDates;
 	}
 
-	public List<ItineraryDTO> getItinerary() {
+	public List<ItineraryResponseDTO> getItinerary() {
 		return itinerary;
 	}
 
-	public void setItinerary(List<ItineraryDTO> itinerary) {
+	public void setItinerary(List<ItineraryResponseDTO> itinerary) {
 		this.itinerary = itinerary;
 	}
 }

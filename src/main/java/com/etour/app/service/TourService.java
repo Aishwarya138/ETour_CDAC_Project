@@ -11,6 +11,6 @@ public interface TourService
     TourMaster getTourById(int id);
     TourMaster addTour(TourMaster tourMaster);
     void deleteTour(int id);
-    TourDTO getTourDetailsByCategoryId(int catmasterId);
+    TourDTO getTourDetailsByCatmasterId(int catmasterId);
 
 }

@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.etour.app.entity.ItineraryMaster;
+import com.etour.app.dto.ItineraryResponseDTO;
 import com.etour.app.repository.ItinerarryRepository;
 import com.etour.app.service.ItineraryService;
 
-@Component
 @Service
 public class ItineraryServiceImpl implements ItineraryService {
 
@@ -35,5 +35,20 @@ public class ItineraryServiceImpl implements ItineraryService {
 		return itinerarryRepository.findById(id).orElse(null);
 	}
 
+
+	@Override
+	public List<ItineraryResponseDTO> getItinerariesByCatmasterId(Integer catmasterId) {
+		// TODO Auto-generated method stub
+		List<ItineraryMaster> itineraries = itinerarryRepository.findByCatmaster_IdOrderByDayNumberAsc(catmasterId);
+		
+		return itineraries.stream().map(itinerary -> {
+			ItineraryResponseDTO dto = new ItineraryResponseDTO();
+			dto.setDayNumber(itinerary.getDayNumber());
+			dto.setItineraryDetails(itinerary.getItineraryDetails());
+			dto.setCategoryId(itinerary.getCatmaster().getCategoryId());
+
+			return dto;
+		}).toList();
+	}
 
 }
