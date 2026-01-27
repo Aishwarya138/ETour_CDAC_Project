@@ -12,6 +12,7 @@ import BookingSummary from "../pages/booking/BookingSummary";
 import PaymentPage from "../pages/booking/PaymentPage";
 import PaymentSuccess from "../pages/booking/PaymentSuccess";
 import PaymentFailure from "../pages/booking/PaymentFailure";
+import BookingDetailsPage from "../pages/BookingDetailsPage";
 import RequireLogin from "../components/RequireLogin";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
@@ -56,6 +57,15 @@ export default function AppRouter() {
         <Route path="/payment/:bookingId" element={<PaymentPage />} />
         <Route path="/payment/success/:bookingId" element={<PaymentSuccess />} />
         <Route path="/payment/failure" element={<PaymentFailure />} />
+
+        <Route
+          path="/bookings/:bookingId"
+          element={
+            <RequireLogin>
+              <BookingDetailsPage />
+            </RequireLogin>
+          }
+        />
 
 
       </Routes>
