@@ -167,26 +167,33 @@ public class PaymentServiceImpl implements PaymentService {
          - Prevents duplicate emails
         */
         if (bookingJustConfirmed) {
+            try {
+                // 1️⃣ Generate Invoice DTO
+                InvoiceResponseDTO invoice =
+                        invoiceService.generateInvoice(booking.getId().longValue());
 
-            // 1️⃣ Generate Invoice DTO
-            InvoiceResponseDTO invoice =
-                    invoiceService.generateInvoice(booking.getId().longValue());
+                // 2️⃣ Generate Invoice PDF
+                byte[] pdfBytes =
+                        InvoicePdfGenerator.generateInvoicePdf(invoice);
 
-            // 2️⃣ Generate Invoice PDF
-            byte[] pdfBytes =
-                    InvoicePdfGenerator.generateInvoicePdf(invoice);
-
-            // 3️⃣ Send Email via SendGrid
-            emailService.sendInvoiceEmail(
-                    invoice.getCustomer().getEmail(),
-                    "Your E-Tour India Invoice – Booking #" + booking.getId(),
-                    EmailTemplateUtil.invoiceEmailBody(
-                            invoice.getCustomer().getName(),
-                            booking.getId().longValue()
-                    ),
-                    pdfBytes,
-                    "ETour-Invoice-" + booking.getId() + ".pdf"
-            );
+                // 3️⃣ Send Email via SendGrid
+                String customerEmail = invoice.getCustomer().getEmail();
+                
+                emailService.sendInvoiceEmail(
+                        customerEmail,
+                        "Your E-Tour India Invoice – Booking #" + booking.getId(),
+                        EmailTemplateUtil.invoiceEmailBody(
+                                invoice.getCustomer().getName(),
+                                booking.getId().longValue()
+                        ),
+                        pdfBytes,
+                        "ETour-Invoice-" + booking.getId() + ".pdf"
+                );
+                
+            } catch (Exception e) {
+                // Email failure should not affect payment confirmation
+                e.printStackTrace();
+            }
         }
 
         return toDTO(savedPayment);
