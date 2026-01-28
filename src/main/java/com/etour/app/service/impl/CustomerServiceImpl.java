@@ -12,13 +12,13 @@ import java.util.Optional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    
+
     @Autowired
     private CustomerRepository customerRepository;
-    
+
     @Autowired
     private PasswordEncoder passwordEncoder;
-    
+
     @Override
     public CustomerMaster registerCustomer(CustomerMaster customer) {
         if (customerRepository.existsByEmail(customer.getEmail())) {
@@ -28,45 +28,45 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
         return customerRepository.save(customer);
     }
-    
+
     @Override
     public List<CustomerMaster> getAllCustomers() {
         return customerRepository.findAll();
     }
-    
+
     @Override
     public CustomerMaster getCustomerById(Integer id) {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found with ID: " + id));
     }
-    
+
     @Override
     @Transactional
     public CustomerMaster updateCustomer(Integer id, CustomerMaster customerDetails) {
         CustomerMaster existingCustomer = getCustomerById(id);
-        
+
         existingCustomer.setName(customerDetails.getName());
         existingCustomer.setMobileNumber(customerDetails.getMobileNumber());
         existingCustomer.setAddress(customerDetails.getAddress());
         existingCustomer.setCity(customerDetails.getCity());
         existingCustomer.setState(customerDetails.getState());
-        
+
         // Hash the new password if provided
         if (customerDetails.getPassword() != null && !customerDetails.getPassword().isEmpty()) {
             existingCustomer.setPassword(passwordEncoder.encode(customerDetails.getPassword()));
         }
         return customerRepository.save(existingCustomer);
     }
-    
+
     @Override
     @Transactional
     public void deleteCustomer(Integer id) {
         CustomerMaster customer = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found with ID: " + id));
-        
+
         customerRepository.delete(customer);
     }
-    
+
     @Override
     public CustomerMaster loginCustomer(String email, String password) {
         Optional<CustomerMaster> customerOpt = customerRepository.findByEmail(email);

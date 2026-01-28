@@ -32,12 +32,18 @@ public class BookingServiceTest {
     private BookingServiceImpl bookingService;
 
     // ====== MOCKED REPOSITORIES ======
-    @Mock private BookingHeaderRepository bookingRepo;
-    @Mock private PassengerRepository passengerRepo;
-    @Mock private CustomerRepository customerRepo;
-    @Mock private TourRepository tourRepo;
-    @Mock private DepartureDateRepository departureRepo;
-    @Mock private CostRepository costRepo;
+    @Mock
+    private BookingHeaderRepository bookingRepo;
+    @Mock
+    private PassengerRepository passengerRepo;
+    @Mock
+    private CustomerRepository customerRepo;
+    @Mock
+    private TourRepository tourRepo;
+    @Mock
+    private DepartureDateRepository departureRepo;
+    @Mock
+    private CostRepository costRepo;
 
     // ====== COMMON TEST DATA ======
     private CustomerMaster customer;
@@ -76,7 +82,7 @@ public class BookingServiceTest {
     }
 
     // =========================================================
-    //  TEST 1: CREATE BOOKING - SUCCESS
+    // TEST 1: CREATE BOOKING - SUCCESS
     // =========================================================
     @Test
     void testCreateBooking_Success() {
@@ -126,7 +132,7 @@ public class BookingServiceTest {
     }
 
     // =========================================================
-    //  TEST 2: GET BOOKING BY ID - SUCCESS
+    // TEST 2: GET BOOKING BY ID - SUCCESS
     // =========================================================
     @Test
     void testGetBookingById_Success() {
@@ -141,8 +147,7 @@ public class BookingServiceTest {
         when(bookingRepo.findById(999))
                 .thenReturn(Optional.of(booking));
 
-        BookingResponseDTO response =
-                bookingService.getBookingById(999);
+        BookingResponseDTO response = bookingService.getBookingById(999);
 
         assertNotNull(response);
         assertEquals(999, response.getId());
@@ -152,21 +157,4 @@ public class BookingServiceTest {
 
         verify(bookingRepo).findById(999);
     }
-
-    // =========================================================
-    //  TEST 3: GET BOOKING BY ID - NOT FOUND
-    // =========================================================
-//    @Test
-//    void testGetBookingById_NotFound() {
-//
-//        when(bookingRepo.findById(999))
-//                .thenReturn(Optional.empty());
-//
-//        BookingResponseDTO response =
-//                bookingService.getBookingById(999);
-//
-//        assertNull(response);
-//
-//        verify(bookingRepo).findById(999);
-//    }
 }

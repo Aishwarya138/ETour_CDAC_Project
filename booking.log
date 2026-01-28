@@ -1,0 +1,5485 @@
+2026-01-28T18:47:29.756+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.etour.app.EtourBackendApplication    : Starting EtourBackendApplication using Java 17.0.7 with PID 32304 (D:\CDAC\project\prjejject\target\classes started by 2706p in D:\CDAC\project\prjejject)
+2026-01-28T18:47:29.763+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.etour.app.EtourBackendApplication    : The following 1 profile is active: "local"
+2026-01-28T18:47:29.849+05:30  INFO 32304 --- [etour-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-28T18:47:29.849+05:30  INFO 32304 --- [etour-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-28T18:47:31.174+05:30  INFO 32304 --- [etour-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-28T18:47:31.318+05:30  INFO 32304 --- [etour-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 9 JPA repository interfaces.
+2026-01-28T18:47:32.517+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-28T18:47:32.534+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-28T18:47:32.535+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-28T18:47:32.620+05:30  INFO 32304 --- [etour-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2770 ms
+2026-01-28T18:47:32.948+05:30  INFO 32304 --- [etour-backend] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-28T18:47:33.032+05:30  INFO 32304 --- [etour-backend] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-28T18:47:33.738+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-28T18:47:33.784+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-28T18:47:34.200+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d6c3c14
+2026-01-28T18:47:34.203+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-28T18:47:34.290+05:30  WARN 32304 --- [etour-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-28T18:47:34.320+05:30  INFO 32304 --- [etour-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/etour_db?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: etour_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-28T18:47:36.094+05:30  INFO 32304 --- [etour-backend] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-28T18:47:36.239+05:30  INFO 32304 --- [etour-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-28T18:47:36.348+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-28T18:47:36.822+05:30  INFO 32304 --- [etour-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-01-28T18:47:38.668+05:30  WARN 32304 --- [etour-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-28T18:47:39.671+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-01-28T18:47:39.811+05:30  INFO 32304 --- [etour-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-28T18:47:39.828+05:30  INFO 32304 --- [etour-backend] [restartedMain] com.etour.app.EtourBackendApplication    : Started EtourBackendApplication in 10.734 seconds (process running for 11.544)
+2026-01-28T18:48:04.120+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28T18:48:04.121+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-28T18:48:04.124+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-01-28T18:48:04.346+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:48:04.495+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:48:04.506+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:48:04.525+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:48:04.640+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.640+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.640+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.640+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.640+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.684+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.684+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.684+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.684+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.684+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.699+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.699+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.699+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.700+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.699+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.711+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.711+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.711+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.711+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.711+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.730+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.730+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.730+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.730+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.730+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.765+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.765+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.767+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.769+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.771+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.771+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.771+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.772+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.774+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.774+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.775+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.775+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.776+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:04.777+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.778+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.778+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.780+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.780+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:04.780+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.783+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.784+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.784+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.784+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:04.785+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:04.789+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.211+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:48:14.218+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:48:14.232+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:48:14.237+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:48:14.258+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.259+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.260+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.264+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.267+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.267+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.268+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.268+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.271+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.271+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.272+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.274+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.275+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.275+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.275+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.279+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.279+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.279+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.284+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.288+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.289+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.294+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.294+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.297+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.299+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.300+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.302+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.302+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.304+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.305+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.305+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.306+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:14.306+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.308+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.310+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:14.310+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.311+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.314+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:14.314+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:14.318+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:16.546+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:48:16.551+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:48:16.580+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.582+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.586+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:16.586+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:16.589+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.589+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.594+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:16.594+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:16.599+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:16.599+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:16.611+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.611+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.616+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:16.616+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:16.620+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.620+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:16.625+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:16.626+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:16.630+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:16.631+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:18.696+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:48:18.704+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:18.708+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:18.712+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:18.716+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:18.750+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:18.754+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:18.758+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:18.761+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:18.765+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:18.774+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:18.780+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:18.784+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:18.788+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:18.793+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:30.988+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.email=?
+2026-01-28T18:48:32.742+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.email=?
+2026-01-28T18:48:32.928+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:32.931+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:32.934+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:32.939+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:32.941+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:32.944+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:32.947+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:48:32.957+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:32.961+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:48:32.964+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:48:32.968+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:48:32.972+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.183+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:49:16.192+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:49:16.221+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.224+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.224+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.224+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.224+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.226+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.227+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.227+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.228+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.228+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.228+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.231+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.231+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.231+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.233+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.233+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.235+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.235+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.235+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.236+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.236+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.236+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.238+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.239+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.239+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.244+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.245+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.246+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.248+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.248+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.248+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.250+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.251+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.252+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.252+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.253+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.253+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.253+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:16.255+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.255+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.256+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.256+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.256+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:16.256+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.256+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.258+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.260+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.260+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:16.263+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:16.263+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.417+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:49:18.422+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:49:18.431+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:49:18.433+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:49:18.453+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.455+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.458+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.459+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.460+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.460+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.461+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.464+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.464+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.465+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.466+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.467+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.467+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.467+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.469+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.470+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.470+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.473+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.473+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.475+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.484+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.484+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.487+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.489+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.489+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.492+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.492+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.492+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.492+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.496+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.496+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:18.497+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.497+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.499+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:18.499+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.499+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.499+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.502+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:18.502+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:18.505+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.441+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:49:19.444+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id=?
+2026-01-28T18:49:19.473+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.475+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.477+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.480+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.482+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.482+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.484+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.487+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.488+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.488+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.492+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.493+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.493+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.498+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.503+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.506+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.506+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.511+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.511+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.514+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.514+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.516+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.518+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.518+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.521+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:19.521+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.522+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:19.524+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:19.528+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:19.534+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:20.902+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.category_id=?
+2026-01-28T18:49:20.908+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:20.911+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:20.915+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:20.918+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:20.953+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:20.959+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:20.961+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:20.965+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:20.967+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:20.975+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:20.980+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:20.982+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:20.984+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:20.989+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:22.308+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:22.308+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:22.311+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:22.315+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:22.315+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:22.318+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:22.321+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:22.329+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:22.333+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:22.335+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:22.338+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:22.341+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:32.327+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : ====================================================
+2026-01-28T18:49:32.327+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : [BOOKING-START] 🚀 Booking Started
+2026-01-28T18:49:32.329+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : [REQUEST] Method: POST
+2026-01-28T18:49:32.329+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : [REQUEST] URI: /api/bookings/create
+2026-01-28T18:49:32.329+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : [REQUEST] IP: 0:0:0:0:0:0:0:1
+2026-01-28T18:49:32.329+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : ====================================================
+2026-01-28T18:49:32.346+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.customer_id=?
+2026-01-28T18:49:32.384+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0
+2026-01-28T18:49:32.390+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.departure_date_id=?
+2026-01-28T18:49:32.399+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0
+2026-01-28T18:49:32.433+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        booking_header
+        (booking_date, booking_status, customer_id, departure_date_id, tax_amount, total_amount, total_passengers, tour_id, tour_amount) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-28T18:49:32.468+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        passenger_master
+        (booking_id, date_of_birth, passenger_amount, passenger_name, passenger_type) 
+    values
+        (?, ?, ?, ?, ?)
+2026-01-28T18:49:32.488+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:32.495+05:30  INFO 32304 --- [etour-backend] [http-nio-8080-exec-1] c.e.app.interceptor.BookingInterceptor   : [BOOKING-TIME]  Time Taken: 168 ms
+2026-01-28T18:49:32.531+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        bh1_0.booking_id,
+        bh1_0.booking_date,
+        bh1_0.booking_status,
+        bh1_0.customer_id,
+        bh1_0.departure_date_id,
+        bh1_0.tax_amount,
+        bh1_0.total_amount,
+        bh1_0.total_passengers,
+        bh1_0.tour_id,
+        bh1_0.tour_amount 
+    from
+        booking_header bh1_0 
+    where
+        bh1_0.booking_id=?
+2026-01-28T18:49:32.536+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.customer_id=?
+2026-01-28T18:49:32.538+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.tour_id=?
+2026-01-28T18:49:32.539+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:32.542+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.departure_date_id=?
+2026-01-28T18:49:32.556+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        bh1_0.booking_id,
+        bh1_0.booking_date,
+        bh1_0.booking_status,
+        bh1_0.customer_id,
+        bh1_0.departure_date_id,
+        bh1_0.tax_amount,
+        bh1_0.total_amount,
+        bh1_0.total_passengers,
+        bh1_0.tour_id,
+        bh1_0.tour_amount 
+    from
+        booking_header bh1_0 
+    where
+        bh1_0.booking_id=?
+2026-01-28T18:49:32.559+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.customer_id=?
+2026-01-28T18:49:32.562+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.tour_id=?
+2026-01-28T18:49:32.563+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:32.566+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.departure_date_id=?
+2026-01-28T18:49:32.575+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        passenger_master 
+    WHERE
+        booking_id = ?
+2026-01-28T18:49:32.591+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        passenger_master 
+    WHERE
+        booking_id = ?
+2026-01-28T18:49:39.025+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        bh1_0.booking_id,
+        bh1_0.booking_date,
+        bh1_0.booking_status,
+        bh1_0.customer_id,
+        bh1_0.departure_date_id,
+        bh1_0.tax_amount,
+        bh1_0.total_amount,
+        bh1_0.total_passengers,
+        bh1_0.tour_id,
+        bh1_0.tour_amount 
+    from
+        booking_header bh1_0 
+    where
+        bh1_0.booking_id=?
+2026-01-28T18:49:39.027+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.customer_id=?
+2026-01-28T18:49:39.028+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.tour_id=?
+2026-01-28T18:49:39.031+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:39.033+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.departure_date_id=?
+2026-01-28T18:49:39.041+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        bh1_0.booking_id,
+        bh1_0.booking_date,
+        bh1_0.booking_status,
+        bh1_0.customer_id,
+        bh1_0.departure_date_id,
+        bh1_0.tax_amount,
+        bh1_0.total_amount,
+        bh1_0.total_passengers,
+        bh1_0.tour_id,
+        bh1_0.tour_amount 
+    from
+        booking_header bh1_0 
+    where
+        bh1_0.booking_id=?
+2026-01-28T18:49:39.043+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.customer_id,
+        cm1_0.address,
+        cm1_0.city,
+        cm1_0.email,
+        cm1_0.mobile_number,
+        cm1_0.name,
+        cm1_0.password,
+        cm1_0.reset_password_token,
+        cm1_0.reset_password_token_expiry,
+        cm1_0.state 
+    from
+        customer_master cm1_0 
+    where
+        cm1_0.customer_id=?
+2026-01-28T18:49:39.045+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        passenger_master 
+    WHERE
+        booking_id = ?
+2026-01-28T18:49:39.045+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.tour_id=?
+2026-01-28T18:49:39.046+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:39.049+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.departure_date_id=?
+2026-01-28T18:49:39.063+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        passenger_master 
+    WHERE
+        booking_id = ?
+2026-01-28T18:49:46.707+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:49:46.714+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:49:46.746+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.749+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.751+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.752+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.754+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.754+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.756+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.756+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.756+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.756+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.756+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.758+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.759+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.760+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.760+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.761+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.761+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.762+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.763+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.763+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.765+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.766+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.766+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.769+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.769+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.769+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.769+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.771+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.772+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.772+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.774+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.775+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.775+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.777+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.779+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.779+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.779+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.779+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.780+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.781+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.782+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.782+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.782+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.783+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:49:46.785+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.785+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:49:46.789+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.789+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:49:46.792+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:49:46.792+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.169+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:50:33.180+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:50:33.266+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:50:33.274+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.subcategory_id is null
+2026-01-28T18:50:33.354+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.354+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.358+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.358+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.361+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.361+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.361+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.361+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.362+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.365+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.365+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.366+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.367+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.367+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.367+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.367+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.368+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.375+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.375+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.376+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.380+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.380+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.380+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-11] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.380+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.383+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.384+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.386+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.388+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.390+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.390+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.392+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.393+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.394+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.395+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.395+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.396+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.399+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.400+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.400+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.401+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.401+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.catmaster_id,
+        cm1_0.category_id,
+        cm1_0.flag,
+        cm1_0.image_path,
+        cm1_0.name,
+        cm1_0.subcategory_id 
+    from
+        category_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.402+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.403+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.404+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        tm1_0.tour_id,
+        tm1_0.catmaster_id,
+        tm1_0.departure_date_id,
+        tm1_0.description 
+    from
+        tour_master tm1_0 
+    where
+        tm1_0.catmaster_id=? 
+    limit
+        ?
+2026-01-28T18:50:33.406+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.408+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        cm1_0.cost_id,
+        cm1_0.base_cost,
+        cm1_0.catmaster_id,
+        cm1_0.child_with_bed_cost,
+        cm1_0.child_without_bed_cost,
+        cm1_0.extra_person_cost,
+        cm1_0.single_person_cost,
+        cm1_0.valid_from_date,
+        cm1_0.valid_to_date 
+    from
+        cost_master cm1_0 
+    where
+        cm1_0.catmaster_id=?
+2026-01-28T18:50:33.409+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.410+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number
+2026-01-28T18:50:33.410+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ddm1_0.departure_date_id,
+        ddm1_0.catmaster_id,
+        ddm1_0.departure_date,
+        ddm1_0.end_date,
+        ddm1_0.number_of_days 
+    from
+        departure_date_master ddm1_0 
+    where
+        ddm1_0.catmaster_id=?
+2026-01-28T18:50:33.414+05:30 DEBUG 32304 --- [etour-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        im1_0.itinerary_id,
+        im1_0.catmaster_id,
+        im1_0.day_number,
+        im1_0.itinerary_details 
+    from
+        itinerary_master im1_0 
+    where
+        im1_0.catmaster_id=? 
+    order by
+        im1_0.day_number

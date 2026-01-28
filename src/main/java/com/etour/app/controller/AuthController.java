@@ -1,18 +1,22 @@
 package com.etour.app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
 import com.etour.app.config.CustomUserDetails;
 import com.etour.app.dto.AuthRequest;
 import com.etour.app.dto.AuthResponse;
 import com.etour.app.entity.CustomerMaster;
 import com.etour.app.repository.CustomerRepository;
 import com.etour.app.util.JwtUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -23,50 +27,49 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtUtils jwtUtils;
-
-    @Autowired
     private CustomerRepository customerRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AuthRequest authRequest) {
-        try {
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
-
-            CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
-            String jwt = jwtUtils.generateToken(userDetails.getUsername());
-
-            return ResponseEntity.ok(new AuthResponse(
-                    jwt,
-                    userDetails.getCustomer().getId(),
-                    userDetails.getCustomer().getName(),
-                    userDetails.getCustomer().getEmail()));
-
-        } catch (Exception e) {
-            return ResponseEntity.status(401).body("Invalid email or password");
-        }
-    }
+    @Autowired
+    private JwtUtils jwtUtils;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody CustomerMaster customer) {
+    public ResponseEntity<?> registerCustomer(@RequestBody CustomerMaster customer) {
         if (customerRepository.findByEmail(customer.getEmail()).isPresent()) {
-            return ResponseEntity.badRequest().body("Email is already registered");
+            return ResponseEntity.badRequest().body("Email is already in use!");
         }
 
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
         CustomerMaster savedCustomer = customerRepository.save(customer);
 
-        // Auto-login after register (optional, but returning token helps)
-        String jwt = jwtUtils.generateToken(savedCustomer.getEmail());
+        String token = jwtUtils.generateToken(savedCustomer.getEmail());
 
         return ResponseEntity.ok(new AuthResponse(
-                jwt,
+                token,
                 savedCustomer.getId(),
                 savedCustomer.getName(),
-                savedCustomer.getEmail()));
+                savedCustomer.getEmail()
+        ));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody AuthRequest authRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+
+        String token = jwtUtils.generateToken(userDetails.getUsername());
+
+        return ResponseEntity.ok(new AuthResponse(
+                token,
+                userDetails.getCustomer().getId(),
+                userDetails.getCustomer().getName(),
+                userDetails.getCustomer().getEmail()
+        ));
     }
 }
