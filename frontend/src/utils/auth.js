@@ -13,6 +13,10 @@ export const getCustomerName = () => {
   return localStorage.getItem("customerName");
 };
 
+export const getCustomerRole = () => {
+  return localStorage.getItem("role");
+};
+
 export const getAuthToken = () => {
   return localStorage.getItem("token");
 };
@@ -23,6 +27,7 @@ export const login = (data) => {
   }
   localStorage.setItem("customerId", data.id || data.customerId); // Handle both id formats just in case
   localStorage.setItem("customerName", data.name);
+  localStorage.setItem("role", data.role || "CUSTOMER");
 
   // Dispatch event so listeners know auth state changed
   authEventTarget.dispatchEvent(new Event("authChange"));
