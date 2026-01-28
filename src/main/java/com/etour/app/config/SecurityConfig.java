@@ -31,14 +31,34 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtFilter)
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtFilter,
+            com.etour.app.security.OAuth2LoginSuccessHandler oauth2LoginSuccessHandler)
             throws Exception {
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll())
+                        // Public Auth & System Endpoints
+                        .requestMatchers("/api/auth/**", "/api/customers/register", "/api/customers/login",
+                                "/api/i18n/**", "/login/oauth2/**", "/oauth2/**", "/images/**")
+                        .permitAll()
+
+                        // Public Browsing Endpoints (GET Only)
+                        .requestMatchers(org.springframework.http.HttpMethod.GET,
+                                "/api/categories/**",
+                                "/api/tours/**",
+                                "/api/itineraries/**",
+                                "/api/search/**",
+                                "/api/destinations/**",
+                                "/api/departures/**",
+                                "/api/costs/**")
+                        .permitAll()
+
+                        // Protected Endpoints (Bookings, Customers, etc.)
+                        .anyRequest().authenticated())
+                .oauth2Login(oauth2 -> oauth2
+                        .successHandler(oauth2LoginSuccessHandler))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

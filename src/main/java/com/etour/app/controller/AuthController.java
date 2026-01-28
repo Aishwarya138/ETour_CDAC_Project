@@ -16,8 +16,6 @@ import com.etour.app.entity.CustomerMaster;
 import com.etour.app.repository.CustomerRepository;
 import com.etour.app.util.JwtUtils;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -44,32 +42,41 @@ public class AuthController {
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
         CustomerMaster savedCustomer = customerRepository.save(customer);
 
-        String token = jwtUtils.generateToken(savedCustomer.getEmail());
+        java.util.Map<String, Object> claims = new java.util.HashMap<>();
+        claims.put("userId", savedCustomer.getId());
+        claims.put("name", savedCustomer.getName());
+        claims.put("firstName", savedCustomer.getName() != null ? savedCustomer.getName().split(" ")[0] : "User");
+
+        String token = jwtUtils.generateToken(savedCustomer.getEmail(), claims);
 
         return ResponseEntity.ok(new AuthResponse(
                 token,
                 savedCustomer.getId(),
                 savedCustomer.getName(),
-                savedCustomer.getEmail()
-        ));
+                savedCustomer.getEmail()));
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
-        );
+                new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
 
-        String token = jwtUtils.generateToken(userDetails.getUsername());
+        java.util.Map<String, Object> claims = new java.util.HashMap<>();
+        claims.put("userId", userDetails.getCustomer().getId());
+        claims.put("name", userDetails.getCustomer().getName());
+        claims.put("firstName",
+                userDetails.getCustomer().getName() != null ? userDetails.getCustomer().getName().split(" ")[0]
+                        : "User");
+
+        String token = jwtUtils.generateToken(userDetails.getUsername(), claims);
 
         return ResponseEntity.ok(new AuthResponse(
                 token,
                 userDetails.getCustomer().getId(),
                 userDetails.getCustomer().getName(),
-                userDetails.getCustomer().getEmail()
-        ));
+                userDetails.getCustomer().getEmail()));
     }
 }
