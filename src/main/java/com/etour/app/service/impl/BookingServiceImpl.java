@@ -92,23 +92,15 @@ public class BookingServiceImpl implements BookingService {
                         () -> new RuntimeException("Departure Date not found with ID: " + dto.getDepartureDateId()));
 
         // ---------------- FETCH COST ----------------
+        List<CostMaster> costs = costRepo.findByCatmaster_Id(tour.getCatmaster().getId());
 
-        List<CostMaster> costList = costRepo.findAll();
-        CostMaster cost = null;
-
-        for (CostMaster c : costList) {
-
-            if (c.getCatmaster().getId()
-                    .equals(tour.getCatmaster().getId())) {
-
-                cost = c;
-                break;
-            }
+        if (costs.isEmpty()) {
+            throw new RuntimeException("Cost not configured for Category ID: " + tour.getCatmaster().getId());
         }
 
-        if (cost == null) {
-            throw new RuntimeException("Cost not configured for this tour");
-        }
+        // Assuming there's one active cost or picking the first one
+        // Ideally we should filter by valid dates as well
+        CostMaster cost = costs.get(0);
 
         int totalPassengers = dto.getPassengers().size();
 
@@ -142,11 +134,18 @@ public class BookingServiceImpl implements BookingService {
 
         // ---------------- SAVE PASSENGERS ----------------
 
+        if (totalPassengers <= 0) {
+            throw new RuntimeException("Total passengers must be greater than zero");
+        }
+
         // FIXED BigDecimal Division (NO ERROR NOW)
-        BigDecimal perPassengerAmount = tourAmount.divide(
-                new BigDecimal(totalPassengers),
-                2,
-                RoundingMode.HALF_UP);
+        BigDecimal perPassengerAmount = BigDecimal.ZERO;
+        if (totalPassengers > 0) {
+            perPassengerAmount = tourAmount.divide(
+                    new BigDecimal(totalPassengers),
+                    2,
+                    RoundingMode.HALF_UP);
+        }
 
         for (PassengerDTO p : dto.getPassengers()) {
 
@@ -247,7 +246,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public BookingResponseDTO getBookingById(Integer bookingId) {
-        BookingHeader booking = bookingRepo.findById(bookingId)
+        BookingHeader booking = bookingRepo.findByIdWithDetails(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found with ID: " + bookingId));
         return toDTO(booking);
     }

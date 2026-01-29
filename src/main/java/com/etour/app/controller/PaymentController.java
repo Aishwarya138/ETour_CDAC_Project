@@ -9,7 +9,6 @@ import com.etour.app.service.PaymentService;
 
 @RestController
 @RequestMapping("/api/payments")
-@CrossOrigin
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -21,6 +20,11 @@ public class PaymentController {
     @PostMapping
     public PaymentDTO addPayment(@RequestBody PaymentDTO dto) {
         return paymentService.addPayment(dto);
+    }
+
+    @GetMapping
+    public List<PaymentDTO> getAllPayments() {
+        return paymentService.getAllPayments();
     }
 
     @GetMapping("/{id}")
@@ -35,7 +39,7 @@ public class PaymentController {
 
     @PutMapping("/{id}/status/{status}")
     public PaymentDTO updateStatus(@PathVariable Integer id,
-                                   @PathVariable String status) {
+            @PathVariable String status) {
         return paymentService.updatePaymentStatus(id, status);
     }
 

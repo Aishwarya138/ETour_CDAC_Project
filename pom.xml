@@ -133,6 +133,19 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+		<!-- Apache POI for Excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+
+		<!-- Java Mail Sender -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
 	</dependencies>
 	
 	<repositories>
