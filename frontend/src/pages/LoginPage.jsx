@@ -63,6 +63,14 @@ const LoginPage = () => {
     setLoading(true);
     setError(null);
 
+    // Basic Email Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await loginCustomer({
         email: formData.email,

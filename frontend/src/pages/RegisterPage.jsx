@@ -26,16 +26,44 @@ const RegisterPage = () => {
     }));
   };
 
+  // Validation Helper
+  const validateForm = () => {
+    // Email Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      return 'Please enter a valid email address.';
+    }
+
+    // Mobile Number Validation (10 digits)
+    const mobileRegex = /^\d{10}$/;
+    if (!mobileRegex.test(formData.mobileNumber)) {
+      return 'Mobile number must be exactly 10 digits.';
+    }
+
+    // Password Validation (Min 6 chars)
+    if (formData.password.length < 6) {
+      return 'Password must be at least 6 characters long.';
+    }
+
+    // Confirm Password
+    if (formData.password !== formData.confirmPassword) {
+      return 'Passwords do not match!';
+    }
+
+    // Terms
+    if (!formData.agreeTerms) {
+      return 'Please agree to the terms and conditions';
+    }
+
+    return null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match!');
-      return;
-    }
-
-    if (!formData.agreeTerms) {
-      setError('Please agree to the terms and conditions');
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
       return;
     }
 

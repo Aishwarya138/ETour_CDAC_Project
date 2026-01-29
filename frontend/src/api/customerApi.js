@@ -19,3 +19,11 @@ export const updateCustomer = (id, customerData) => {
   return apiClient.put(`/customers/${id}`, customerData)
     .then(res => res.data);
 };
+
+export const forgotPassword = (email) => {
+  return apiClient.post('/auth/forgot-password', { email });
+};
+
+export const resetPassword = (token, newPassword) => {
+  return apiClient.post('/auth/reset-password', { token, newPassword });
+};

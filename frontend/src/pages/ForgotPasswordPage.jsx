@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { forgotPassword } from '../api/customerApi';
 
 const ForgotPasswordPage = () => {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
 
-        // Simulate API call
-        setTimeout(() => {
+        try {
+            await forgotPassword(email);
+            // Always show success message for security (user enumeration prevention)
             setStatus('success');
-        }, 1500);
+        } catch (error) {
+            console.error("Forgot password error", error);
+            // Optionally set error state if you want to show network errors
+            setStatus('success'); // Still show success to not reveal if email exists or not, or handle differently based on requirement
+        }
     };
 
     if (status === 'success') {
