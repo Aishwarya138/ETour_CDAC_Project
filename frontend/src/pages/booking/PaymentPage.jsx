@@ -245,7 +245,7 @@ const PaymentPage = () => {
                 disabled={processingPayment}
                 className={`
                             w-full py-4 rounded-xl font-bold text-white text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all
-                            ${processingPayment ? 'bg-gray-400 cursor-wait' : 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/30'}
+                            ${processingPayment ? 'bg-gray-400 cursor-wait' : 'bg-gradient-to-r from-emerald-600 to-teal-600 shadow-emerald-500/30'}
                         `}
               >
                 {processingPayment ? 'Processing...' : `Pay Now`}
