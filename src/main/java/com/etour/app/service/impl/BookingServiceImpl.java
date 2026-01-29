@@ -106,9 +106,9 @@ public class BookingServiceImpl implements BookingService {
 
         // ---------------- ROOM PRICE CALCULATION ----------------
 
-        BigDecimal tourAmount = calculateDynamicTourCost(
-                dto.getPassengers(),
-                departure.getDepartureDate(),
+        BigDecimal tourAmount = calculateRoomAmount(
+                totalPassengers,
+                dto.getRoomPreference(),
                 cost);
 
         BigDecimal taxAmount = tourAmount.multiply(new BigDecimal("0.05"));
@@ -170,83 +170,62 @@ public class BookingServiceImpl implements BookingService {
     // ROOM ALLOCATION LOGIC
     // =================================================
 
-    // =================================================
-    // DYNAMIC COST CALCULATION (Age-Based + Rooming)
-    // =================================================
-
-    private BigDecimal calculateDynamicTourCost(
-            List<PassengerDTO> passengers,
-            LocalDate departureDate,
+    private BigDecimal calculateRoomAmount(
+            int paxCount,
+            String preference,
             CostMaster cost) {
 
-        BigDecimal totalCost = BigDecimal.ZERO;
+        BigDecimal totalAmount = BigDecimal.ZERO;
 
-        // RULE: If only 1 passenger, ALWAYS apply Adult Single Person Cost
-        // (Even if child or infant, they occupy the room alone)
-        if (passengers.size() == 1) {
-            System.out.println("DEBUG: Single Passenger detected - Applying Single Person Cost regardless of age.");
-            return cost.getSinglePersonCost();
+        // ---------------- EVEN PASSENGERS ----------------
+        // ONLY TWIN SHARING
+
+        if (paxCount % 2 == 0) {
+
+            int twinRooms = paxCount / 2;
+
+            totalAmount = cost.getBaseCost()
+                    .multiply(new BigDecimal(twinRooms));
+
+            return totalAmount;
         }
 
-        int adults = 0;
-        int children = 0;
-        int infants = 0;
+        // ---------------- ODD PASSENGERS ----------------
 
-        // 1. Classify Passengers
-        for (PassengerDTO p : passengers) {
-            int age = calculateAge(p.getDateOfBirth(), departureDate);
-            if (age >= 12) {
-                adults++;
-            } else if (age >= 2) {
-                children++;
-                // Add Child Cost immediately (assuming without bed for simplicity or standard
-                // logic)
-                // TODO: If "With Bed" is needed, passed in DTO
-                totalCost = totalCost.add(cost.getChildWithoutBedCost());
-            } else {
-                infants++;
-                // Infants are free
+        else {
+
+            // OPTION 1 → 1 SINGLE + REMAINING TWIN
+
+            if (preference.equalsIgnoreCase("AUTO")
+                    || preference.equalsIgnoreCase("ODD_SINGLE_TWIN")) {
+
+                int remaining = paxCount - 1;
+                int twinRooms = remaining / 2;
+
+                BigDecimal twinAmount = cost.getBaseCost()
+                        .multiply(new BigDecimal(twinRooms));
+
+                BigDecimal singleAmount = cost.getSinglePersonCost();
+
+                totalAmount = twinAmount.add(singleAmount);
+
+                return totalAmount;
             }
-        }
 
-        // VALIDATION: Enforce at least one adult
-        if (adults == 0) {
-            throw new RuntimeException("Booking failed: At least one Adult (12+ years) is required.");
-        }
+            // OPTION 2 → ALL TWIN (RANDOM ADJUSTMENT)
 
-        System.out.println("DEBUG: Cost Calc - Adults: " + adults + ", Children: " + children);
+            if (preference.equalsIgnoreCase("ALL_TWIN_RANDOM")) {
 
-        // 2. Room Allocation & Adult Cost Calculation
+                int twinRooms = (paxCount + 1) / 2;
 
-        if (adults > 0) {
-            int doubleRooms = adults / 2;
-            int remainingAdults = adults % 2;
+                totalAmount = cost.getBaseCost()
+                        .multiply(new BigDecimal(twinRooms));
 
-            // Cost for Double Rooms (2 people per room)
-            // stored as 'baseCost' usually means per person on twin sharing?
-            // OR per room?
-            // User prompt said: "Starting From price... represents base cost for twin
-            // sharing".
-            // Usually this means "Per Person on Twin Sharing".
-            // So for a double room, cost is 2 * baseCost.
-
-            BigDecimal doubleRoomCost = cost.getBaseCost().multiply(new BigDecimal(2));
-            totalCost = totalCost.add(doubleRoomCost.multiply(new BigDecimal(doubleRooms)));
-
-            // Remaining Adult (Single Room or Extra Bed?)
-            if (remainingAdults == 1) {
-                // Single Room
-                totalCost = totalCost.add(cost.getSinglePersonCost());
+                return totalAmount;
             }
+
+            throw new RuntimeException("Invalid Room Preference");
         }
-
-        return totalCost;
-    }
-
-    private int calculateAge(LocalDate dob, LocalDate departureDate) {
-        if (dob == null || departureDate == null)
-            return 0;
-        return java.time.Period.between(dob, departureDate).getYears();
     }
 
     // =================================================
