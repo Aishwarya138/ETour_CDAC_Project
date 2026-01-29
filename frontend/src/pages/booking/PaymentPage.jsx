@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RAZORPAY_KEY_ID } from "../../config";
-import { createRazorpayOrder, verifyPayment, getBookingById } from "../../api/bookingApi";
+import { createRazorpayOrder, verifyPayment, getBookingById, updateBookingStatus } from "../../api/bookingApi";
 import { getPassengersByBooking } from "../../api/passengerApi";
 import Loader from "../../components/Loader";
 
@@ -88,6 +88,7 @@ const PaymentPage = () => {
         modal: {
           ondismiss: () => {
             setProcessingPayment(false);
+            updateBookingStatus(bookingId, 'FAILED');
             setError("Payment was cancelled");
           },
         },
@@ -102,6 +103,7 @@ const PaymentPage = () => {
         setProcessingPayment(false);
       }
     } catch (err) {
+      updateBookingStatus(bookingId, 'FAILED');
       setError(err.response?.data?.message || "Failed to initiate payment");
       setProcessingPayment(false);
       console.error("Payment Error:", err);
@@ -122,6 +124,7 @@ const PaymentPage = () => {
       setProcessingPayment(false);
       navigate(`/payment/success/${bookingId}`);
     } catch (err) {
+      updateBookingStatus(bookingId, 'FAILED');
       setProcessingPayment(false);
       setError(err.response?.data?.message || "Payment verification failed");
       console.error(err);
