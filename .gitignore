@@ -10,6 +10,7 @@ target/
 .factorypath
 .project
 .settings
+.metadata/
 .springBeans
 .sts4-cache
 
@@ -31,3 +32,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+bin/
+
+
+# Local Spring Boot config
+application-local.properties
+
+# Logs
+booking.log
+
+# Test output
+test_output.txt
