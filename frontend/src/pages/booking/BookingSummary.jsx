@@ -91,7 +91,9 @@ const BookingSummary = () => {
 
               <div className="space-y-3 mb-8">
                 <div className="flex justify-between text-gray-600">
-                  <span>Base Tour Cost</span>
+                  <span>
+                    {passengers.length === 1 ? 'Single Occupancy Cost' : 'Base Tour Cost (Twin Sharing)'}
+                  </span>
                   <span className="font-medium">₹ {booking.tourAmount?.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
